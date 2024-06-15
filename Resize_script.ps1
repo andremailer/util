@@ -1,3 +1,12 @@
+# Script to resolve the 0x80070643 error on Windows Update when applying the KB5034441 or KB5034439
+# Execute this on PowerShell with administrative rights with this command line:
+
+#   .\Resize_script.ps1 -SkipConfirmation $true -BackupFolder C:\winre_backup
+
+
+# https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-20666
+# https://learn.microsoft.com/pt-br/windows-hardware/manufacture/desktop/add-update-to-winre?view=windows-11#extend-the-windows-re-partition
+
 Param (
 [Parameter(Mandatory=$false,HelpMessage="Skip confirmation")][bool]$SkipConfirmation=$false,
 [Parameter(Mandatory=$true,HelpMessage="Path to backup old WinRE partition content to")][string]$BackupFolder
