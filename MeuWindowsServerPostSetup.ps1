@@ -7,6 +7,9 @@ if ((Get-WinUserLanguageList).LanguageTag -ieq "pt-BR") {
 } else {
     Get-NetFirewallRule -DisplayGroup "Remote Desktop" | Set-NetFirewallRule -Enabled True
 }
+# Configure Windows Firewall to allow PING
+Get-NetFirewallRule -DisplayName "*ICMPv4-In)" | Set-NetFirewallRule -Enabled True
+Get-NetFirewallRule -DisplayName "*ICMPv6-In)" | Set-NetFirewallRule -Enabled True
 
 
 # WINDOWS FEATURES #####################################################################################################
